@@ -1,253 +1,134 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Desafio Barriga Zero em 7 Dias</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lipocaps - Controle o seu peso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;}
     body {
       font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f0fdf4;
-      color: #2d3748;
+      background-color: #f4fffd;
+      color: #333;
     }
-
     header {
-      background: linear-gradient(135deg, #38a169, #48bb78);
-      color: white;
-      padding: 60px 20px;
+      background: url('https://demo.rossdigitall.club/wp-content/uploads/2022/03/backgound-lipocaps-main.jpg') center left/cover no-repeat;
+      padding: 100px 20px;
       text-align: center;
     }
-
+    header h3, header h1 {
+      color: #2daaa2;
+    }
     header h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
+      font-size: 2.5em;
+      font-weight: 800;
     }
-
-    header p {
-      font-size: 18px;
+    header h3 {
+      font-size: 1.5em;
     }
-
-    section {
-      max-width: 900px;
-      margin: auto;
-      background: white;
-      border-radius: 12px;
-      padding: 40px 30px;
-      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-      margin-top: -40px;
-      position: relative;
-      z-index: 10;
-    }
-
-    h2 {
-      font-size: 24px;
-      color: #2f855a;
-      margin-top: 40px;
-    }
-
-    p {
-      line-height: 1.7;
-      font-size: 16px;
-    }
-
-    .benefits, .faq {
-      list-style: none;
-      padding: 0;
-      margin-top: 20px;
-    }
-
-    .benefits li, .faq li {
-      margin-bottom: 15px;
-      padding-left: 30px;
-      position: relative;
-    }
-
-    .benefits li::before, .faq li::before {
-      content: "✅";
-      position: absolute;
-      left: 0;
-      color: #38a169;
-    }
-
-    .product-image, .video-embed {
+    .video-section, .benefits, .cta-section, .guarantee-section, .faq-section, .footer {
+      padding: 50px 20px;
       text-align: center;
-      margin: 30px 0;
     }
-
-    .product-image img {
-      max-width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    .video-section iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 315px;
+      border-radius: 20px;
+      box-shadow: 0 4px 5px rgba(0,0,0,0.24);
     }
-
-    .cta {
-      text-align: center;
-      margin: 50px 0;
-    }
-
-    .cta a {
-      background: linear-gradient(90deg, #38a169, #48bb78);
+    .button-main {
+      background: #FF6700;
       color: white;
-      padding: 18px 40px;
-      font-size: 20px;
-      border-radius: 10px;
+      font-size: 1.2em;
+      font-weight: 700;
+      padding: 18px 50px;
+      border: none;
+      border-radius: 50px;
       text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 8px 24px rgba(56, 161, 105, 0.4);
-      transition: transform 0.2s ease;
-    }
-
-    .cta a:hover {
-      transform: scale(1.05);
-    }
-
-    footer {
-      background: #e6fffa;
-      padding: 20px;
-      text-align: center;
-      font-size: 14px;
-      color: #4a5568;
-    }
-
-    .fixed-cta {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #38a169;
-      color: white;
-      padding: 14px 32px;
-      font-size: 16px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 6px 20px rgba(56, 161, 105, 0.4);
-      z-index: 100;
-    }
-
-    .countdown {
-      font-size: 22px;
-      font-weight: bold;
-      text-align: center;
-      color: #e53e3e;
+      display: inline-block;
       margin: 20px 0;
     }
-
-    .testimonial {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin-top: 30px;
+    .benefit {
+      margin-bottom: 40px;
     }
-
-    .testimonial img {
-      border-radius: 12px;
-      width: 100px;
+    .benefit img {
+      max-width: 100px;
     }
-
-    .testimonial-text {
-      flex: 1;
-      font-style: italic;
+    .benefit h4 {
+      color: #2daaa2;
+      font-weight: 600;
+      margin: 10px 0;
     }
-
-    .leadform {
-      text-align: center;
-      margin-top: 40px;
+    .benefit p {
+      font-weight: 300;
     }
-
-    .leadform input {
-      padding: 10px;
-      margin: 5px;
-      width: 80%;
-      max-width: 300px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+    .faq-section h3 {
+      margin-bottom: 20px;
+      color: #2daaa2;
     }
-
-    .leadform button {
-      padding: 10px 20px;
-      background: #48bb78;
+    .footer {
+      background: #001514;
       color: white;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
+      font-size: 0.8em;
+      padding: 50px 10px;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h3>CONTROLE O SEU PESO E TENHA MAIS SAÚDE</h3>
+    <h1>SEM PASSAR FOME</h1>
+  </header>
 
-<header>
-  <h1>Desafio Barriga Zero em 7 Dias</h1>
-  <p>Plano 100% online para eliminar a barriga e transformar sua saúde sem dieta maluca!</p>
-</header>
+  <section class="video-section">
+    <iframe src="https://www.youtube.com/embed/XHOmBV4js_E" title="Vídeo Lipocaps" allowfullscreen></iframe><br>
+    <a href="https://kiwify.app/checkout/YOUR_LINK_AQUI" class="button-main">COMPRAR AGORA</a><br>
+    <img src="https://demo.rossdigitall.club/wp-content/uploads/2022/03/compra-segura.png" alt="Compra Segura" width="200">
+  </section>
 
-<div class="countdown">⏳ Oferta especial termina em: <span id="timer">02:00:00</span></div>
+  <section class="benefits">
+    <h3 style="color:#2daaa2; margin-bottom:30px;">Veja o que o LIPOCAPS vai fazer no seu corpo:</h3>
+    <div class="benefit">
+      <img src="https://demo.rossdigitall.club/wp-content/uploads/2022/03/beneficio1.png" alt="Saciedade">
+      <h4>Sensação de Saciedade</h4>
+      <p>Fibras que prolongam o tempo de digestão e aumentam a saciedade.</p>
+    </div>
+    <div class="benefit">
+      <img src="https://demo.rossdigitall.club/wp-content/uploads/2022/03/beneficio2.png" alt="Queima de gordura">
+      <h4>Queima de Gordura</h4>
+      <p>Com alimentos termogênicos que aceleram o metabolismo.</p>
+    </div>
+    <div class="benefit">
+      <img src="https://demo.rossdigitall.club/wp-content/uploads/2022/03/beneficio3.png" alt="Retarda o Envelhecimento">
+      <h4>Retarda o Envelhecimento</h4>
+      <p>Com biotina, melhora absorção de nutrientes e fortalece unhas e cabelos.</p>
+    </div>
+  </section>
 
-<section>
-  <div class="video-embed">
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/2pLT-olgUJs" title="YouTube video" frameborder="0" allowfullscreen></iframe>
-  </div>
+  <section class="cta-section">
+    <h3 style="color:#2daaa2">Sua saúde nunca custou tão pouco...</h3>
+    <a href="https://kiwify.app/checkout/YOUR_LINK_AQUI" class="button-main">COMPRAR AGORA</a>
+  </section>
 
-  <div class="product-image">
-    <img src="https://images.unsplash.com/photo-1611078489935-6c022f858cfc?auto=format&fit=crop&w=900&q=80" alt="Transformação Barriga Zero" />
-  </div>
+  <section class="guarantee-section">
+    <h3 style="color:#2daaa2">SATISFAÇÃO 100% GARANTIDA</h3>
+    <p>Garantimos os resultados do LIPOCAPS. Se não atender suas expectativas, devolvemos seu dinheiro em até 30 dias.</p>
+  </section>
 
-  <h2>Você recebe acesso imediato a:</h2>
-  <ul class="benefits">
-    <li>Plano alimentar completo para 7 dias</li>
-    <li>Treinos de 10 minutos por dia (sem academia)</li>
-    <li>Checklist diário para acompanhar sua evolução</li>
-    <li>Receita bônus de chá termogênico</li>
-    <li>PDF pronto para usar no celular ou imprimir</li>
-  </ul>
+  <section class="faq-section">
+    <h3>Dúvidas Frequentes</h3>
+    <p><strong>Duvida 1:</strong> Resposta</p>
+    <p><strong>Duvida 2:</strong> Resposta</p>
+    <p><strong>Duvida 3:</strong> Resposta</p>
+    <p><strong>Duvida 4:</strong> Resposta</p>
+  </section>
 
-  <div class="testimonial">
-    <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=300&q=80" alt="Cliente feliz" />
-    <div class="testimonial-text">“Nunca tive tanto resultado com tão pouco esforço. Amei cada dia do desafio.” — Camila, 35 anos</div>
-  </div>
-
-  <div class="cta">
-    <a href="https://checkout.kiwify.com.br/seu-link">Quero começar agora o Desafio Barriga Zero</a>
-  </div>
-
-  <h2>Receba um presente!</h2>
-  <div class="leadform">
-    <p>Deixe seu e-mail para receber uma receita bônus exclusiva 🔥</p>
-    <input type="email" placeholder="Seu melhor e-mail" required />
-    <button>Quero Receber</button>
-  </div>
-
-  <h2>Perguntas Frequentes</h2>
-  <ul class="faq">
-    <li><strong>Como recebo o desafio?</strong> Você recebe o PDF automaticamente por e-mail após o pagamento.</li>
-    <li><strong>Preciso de academia?</strong> Não! Tudo é feito em casa.</li>
-    <li><strong>É só para mulheres?</strong> Não, funciona para todos.</li>
-    <li><strong>Tem garantia?</strong> Sim, 7 dias para testar ou seu dinheiro de volta.</li>
-  </ul>
-</section>
-
-<a href="https://checkout.kiwify.com.br/seu-link" class="fixed-cta">💥 Comece agora por apenas R$7</a>
-
-<footer>
-  © 2025 Desafio Barriga Zero. Todos os direitos reservados.
-</footer>
-
-<script>
-  let timer = 7200;
-  const el = document.getElementById("timer");
-  setInterval(() => {
-    if (timer <= 0) return;
-    timer--;
-    const hrs = String(Math.floor(timer / 3600)).padStart(2, '0');
-    const mins = String(Math.floor((timer % 3600) / 60)).padStart(2, '0');
-    const secs = String(timer % 60).padStart(2, '0');
-    el.textContent = `${hrs}:${mins}:${secs}`;
-  }, 1000);
-</script>
-
+  <footer class="footer">
+    <p><strong>Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook.</strong> Fazemos todos os esforços para mostrar resultados reais e não vendemos seus dados. Atendimento: Seg a Sex das 09h às 18h.</p>
+  </footer>
 </body>
 </html>
